@@ -1,20 +1,17 @@
-import './App.css'
-import HeroSection from './components/HeroSection'
-import EventDetails from './components/EventDetails'
-import RSVPForm from './components/RSVPForm'
-import WeddingFooter from './components/Footer'
+import React from "react";
+// import './App.css'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import LandingPage from "./pages/LandingPages";
+
+
 
 function App() {
-
-  return (
-    <>
-    <div className='w-3xl h-screen flex-wrap flex items-center justify-center bg-rose-950'>
-      < HeroSection />
-      < EventDetails />
-      < RSVPForm />
-      <WeddingFooter />
-    </div>
-    </>
+  return(
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+      </Routes>
+    </Router>
   )
 }
 
