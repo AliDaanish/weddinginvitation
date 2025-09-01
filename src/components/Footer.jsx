@@ -1,15 +1,34 @@
-export default function WeddingFooter() {
+import React from 'react';
+import "../../style/Footer.css";
+const Footer = () => {
   return (
-    <footer className="bg-gradient-to-t from-rose-100 to-white text-center py-6 text-sm text-gray-700 font-light">
-      <div className="max-w-4xl mx-auto px-4">
-        <p className="mb-2 italic">“And We created you in pairs.” — Qur'an 78:8</p>
-        <p className="mb-4">Ali & Aisyah's Wedding • August 30, 2025 • Cimahi, Indonesia</p>
-        <div className="flex justify-center space-x-4 text-rose-500">
-          <a href="#rsvp" className="hover:underline">RSVP</a>
-          <a href="#location" className="hover:underline">Location</a>
-          <a href="#gallery" className="hover:underline">Gallery</a>
-        </div>
+    <footer className="bg-[#b28682] text-[#F1DDDB] py-8 relative overflow-hidden">
+      <div className="container mx-auto text-center space-y-2">
+        <p className="text-lg">&copy; 2024 Wedding Invitation. All rights reserved.</p>
+        <p className="text-sm">Designed with love by [Your Name]</p>
+      </div>
+      
+      {/* Dekorasi Bunga di Footer */}
+      <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-[url('/path/to/flower.png')] bg-no-repeat bg-contain opacity-20"></div>
+      
+      {/* Animasi Love */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(20)].map((_, index) => (
+          <div
+            key={index}
+            className="absolute text-pink-300 text-3xl animate-rain"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDuration: `${(Math.random() * 3) + 2}s`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          >
+            ❤️
+          </div>
+        ))}
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

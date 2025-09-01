@@ -12,7 +12,7 @@ const FloatingButton = () => {
         <div className="relative">
             {/* Floating Button */}
             <button
-                className="fixed bottom-4 bg-[#e86765] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg z-50 transition-transform duration-300 transform hover:scale-105 hover:bg-pink-600"
+                className="bottom-4 bg-[#e86765] text-white w-10 h-10 rounded-full border-2 border-white flex items-center justify-center shadow-lg z-50 transition-transform duration-300 transform hover:scale-105 "
                 onClick={toggleMenu}
             >
                 {isOpen ? (
@@ -24,7 +24,7 @@ const FloatingButton = () => {
 
             {/* Navigation Menu */}
             {isOpen && (
-                <div className="fixed bottom-20 left-4 bg-white shadow-lg rounded-lg z-40 w-52">
+                <div className="absolute bottom-20 bg-white shadow-lg rounded-lg z-40 w-44 right-0">
                     <a 
                         href="#about-us"
                         className="block px-4 py-2 text-[#fc8987] hover:bg-gray-200 transition-colors duration-300"

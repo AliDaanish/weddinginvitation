@@ -1,11 +1,12 @@
 /* Kontainer utama */
-.bride-groom-container {
+/* .bride-groom-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
-    background: #F1DDDB; /* Warna dari palet Anda */
-  }
+    padding: 2rem; */
+    /* background: #F1DDDB;  */
+    /* Warna dari palet Anda */
+  
   
   /* Kontainer untuk masing-masing potret */
   .portrait-wrapper {
@@ -19,14 +20,13 @@
   
   /* Bingkai potret */
   .portrait-frame {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border: 10px solid #DFC1BE; /* Mengganti bingkai pink dengan warna dari palet */
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: shake 3s infinite; /* Animasi goyang */
+  position: relative;
+  width: 50%;
+  height: auto;
+  border: 10px solid #DFC1BE;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   /* Foto potret */
@@ -42,14 +42,6 @@
     text-align: center;
   }
   
-  /* Nama */
-  .name {
-    font-family: "Great Vibes", cursive;
-    font-size: 3rem;
-    color: #C29897; /* Mengganti warna pink cerah dengan warna dari palet */
-    margin-bottom: 0.5rem;
-  }
-  
   /* Informasi */
   .info {
     font-family: "Cormorant Upright", serif;
@@ -57,21 +49,22 @@
     color: #D8B5B4; /* Mengganti warna pink gelap dengan warna dari palet */
   }
   
-  /* Animasi goyang bingkai */
-  @keyframes shake {
-    0% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(2deg);
-    }
-    50% {
-      transform: rotate(0deg);
-    }
-    75% {
-      transform: rotate(-2deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
+  .portrait-frame.bride {
+  animation: bride-sway 3s ease-in-out infinite;
+}
+
+.portrait-frame.groom {
+  animation: groom-sway 3s ease-in-out infinite;
+}
+
+  @keyframes bride-sway {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
   }
+
+  @keyframes groom-sway {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+}

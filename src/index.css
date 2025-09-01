@@ -12,13 +12,31 @@
     font-family: Priestacy;
     font-display: swap;
     src: url('/fonts/Priestacy.otf') format('otf');
+
+    font-family: ElMessiri;
+    font-display: swap;
+    src: url('/fonts/ElMessiri.ttf') format('truetype');
+    
+    font-family: Montserrat;
+    font-display: swap;
+    src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
 @theme {
     --font-priest: Priestacy;
+    --font-elmessir: ElMessiri;
+    --font-mon: Montserrat-Regular;
+
     --color-primary: var(--color-red-500);
-    --color-secondary: var(--color-blue-500);
+    --color-secondary: #86413D;
 }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 /* Kustomisasi Scrollbar untuk semua elemen dengan overflow */
 * {

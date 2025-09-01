@@ -19,11 +19,11 @@ const FloatingMusicPlayer = ({ isPlaying, setIsPlaying }) => {
     };
 
     return(
-        <div className="fixed bottom-4 left-4 z-50">
+        <div className="flex bottom-4 left-4 z-50">
             <audio ref={audioRef} src="/music.mp3" loop />
             <button
                 onClick={togglePlayPause}
-                className="bg-[#e86765] text-white p-2 rounded-full shadow-lg hover:bg-red-800 focus:outline-none transition-transform transform hover:scale-105"
+                className="bg-[#e86765] text-white border-2 border-white p-2 rounded-full shadow-lg hover:bg-red-800 focus:outline-none transition-transform transform hover:scale-105"
             >
                 {isPlaying ? (
                     <PauseIcon className="h-6 w-6" />

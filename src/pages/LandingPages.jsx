@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import Hero from "../components/Hero";
+// import Hero from "../components/Hero";
 import Welcome from "../components/Welcome";
 import BrideAndGroom from "../components/BrideAndGroom"
-import FloatingMusicPlayer from "../components/FloatingMusicPlayer";
 import AboutUs from "../components/AboutUs";
 import Countdown from "../components/Countdown";
 import EventDetails from "../components/EventDetails";
+import SendingDirectly from "../components/SendingDirectly";
+import RSVP from "../components/RSVP";
+import Footer from "../components/Footer";
+import FloatingMusicPlayer from "../components/FloatingMusicPlayer";
+import FloatingNav from "../components/FloatingNav";
+
 
 
 const LandingPage = () => {
@@ -14,25 +19,37 @@ const LandingPage = () => {
     const [isPlaying, setIsPlaying] = useState(false)
 
     const handleInvitationOpen = () => {
-        setInvitationOpened(true)
-        setIsPlaying(true)
+        setInvitationOpened(true);
+        setIsPlaying(true);
+        setTimeout(() => {
+          const nextSection = document.getElementById("next-component");
+          nextSection?.scrollIntoView({ behavior: "smooth" });
+        }, 300);
     }
 
     return(
-      <div className="flex flex-col lg:flex-row">
+      <div className="max-w-[420px] w-full flex flex-col bg-[#F1DDDB] ">
 
-        {/* Hero Section */}
+        {/* Hero Section
           <div className="hidden lg:block lg:flex-none lg:w-2/3 heroSticky">
             <Hero isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
-          </div>
+          </div> */}
 
        {/* Landing Page */}
-        <div className="w-full lg:w-1/3 flex-1">
+        <div className="flex-1">
         <Welcome onInvitationOpen={handleInvitationOpen} />
         {isInvitationOpened && (
           <>
+            <div className="bg-black opacity-20" />
+            <div className="fixed bottom-1 left-1/2 -translate-x-1/2 flex flex-row justify-between w-48 z-30 p-1 rounded-2xl ">
+              <FloatingMusicPlayer isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+              <FloatingNav />
+            </div>
             <div id="next-component">
               <BrideAndGroom />
+            </div>
+            <div id="event-details">
+              <EventDetails />
             </div>
             <div id="about-us">
               <AboutUs />
@@ -40,33 +57,31 @@ const LandingPage = () => {
             <div id="countdown">
               <Countdown targetDate={weddingDate} />
             </div>
-            <div id="event-details">
-              <EventDetails />
+            <div id="rsvp">
+              <RSVP />
             </div>
+            <div id="sending-directly">
+              <SendingDirectly />
+            </div>
+            <div id="footer">
+              <Footer />
+            </div> 
             {/* <div id="video-section">
               <VideoSection />
             </div>
             <div id="gallery">
               <Gallery />
             </div>
-            <div id="sending-directly">
-              <SendingDirectly />
-            </div>
-            <div id="rsvp">
-              <RSVP />
-            </div>
             <div id="testimonials">
               <Testimonials />
             </div>
-            <div id="footer">
-              <Footer />
-            </div> */}
+            */}
           </>
         )}
-        <FloatingMusicPlayer
+        {/* <FloatingMusicPlayer
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
-        />
+        /> */}
       </div>
     </div>
     )
