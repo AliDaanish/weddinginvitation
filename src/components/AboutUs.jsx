@@ -1,48 +1,18 @@
 import { HeartIcon, SparklesIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+// import { useState } from "react";
 
 const AboutUs = () => {
-    const [showLetter, setShowLetter] = useState(false);
+    // const [showLetter, setShowLetter] = useState(false);
 
-    const toggleLetter = () => {
-        setShowLetter(!showLetter);
-    };
+    // const toggleLetter = () => {
+    //     setShowLetter(!showLetter);
+    // };
 
     return(
         <div className="relative py-12 bg-[#F1DDDB] overflow-hidden" id="about-us">
-            <h2 className="text-5xl font-extrabold text-center mb-8 text-[#C29897] tracking-wider animate-pulse">About Us</h2>
+            <h2 className="text-5xl font-priest font-extrabold text-center mb-8 p-8 text-[#C29897] tracking-wider animate-pulse"><img src="/initial.png" /></h2>
             <div className="max-w-4xl mx-auto text-center space-y-12 relative">
 
-                {/* Card Ribbon */}
-                <div className="relative bg-[#FBE4E4] p-8 rounded-lg shadow-lg border border[#DFC1BE] mx-4 transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl animate-fade-in">
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#DFC1BE] via-[#F1DDDB] to-[#FBE4E4] opacity-20" />
-                    <div className="relative z-10">
-                        <div className="flex flex-col items-center">
-                            <div className="flex items-center mb-4">
-                                <HeartIcon className="h-12 w-12 text-[#fc8987] mx-auto animate-bounce" />
-                            </div>
-                            <button
-                                onClick={toggleLetter}
-                                className="bg-[#C29897] text-white px-6 py-2 rounded-lg shadow-lg hover:bg-[#B58685] focus:outline-none">
-                                    Our Story
-                                </button>
-                        </div>
-                        {showLetter && (
-                            <div className="mt-8 p-6 bg-white rounded-lg shadow-lg border border-[#DFC1BE] text-left">
-                                <p className="text-lg text-[#775E5C]">
-                                    yeah like a shit
-                                </p>
-                                <p className="text-lg text-[#775E5C] mt-4">
-                                     Kami sangat senang dapat berbagi momen ini dengan Anda, teman-teman, dan keluarga yang kami cintai. Terima kasih telah menjadi bagian dari perjalanan kami. Kami tidak sabar untuk merayakan hari istimewa ini bersama Anda semua.
-                                </p>
-                            </div>
-                        )}
-                    </div>
-                    <div className="absolute top-0 left-0 transform -translate-y-8 translate-x-4">
-                        <div className="w-20 h-20 bg-[#f8dbdd] rounded-full absolute -top-4 -left-4 border-4 border-[#f2cdca] z-0" />
-                    </div>
-                </div>
-                
                 {/* Surat Ar-Rum dan Terjemahan Latin */}
                 <div className="relative bg-[#FBE4E4] p-8 rounded-lg shadow-lg border border-[#DFC1BE] mx-4 transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl animate-fade-in">
                     <div className="absolute inset-0 pointer-events-none">

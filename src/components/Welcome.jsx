@@ -43,7 +43,7 @@ const Welcome = ({ onInvitationOpen }) => {
             
             <div className="flex flex-wrap gap-48 relative items-center justify-center translate-y-2/9">
                 <div className="flex-col items-center justify-center transform text-center z-30">
-                    <h1 className="text-4xl mb-24 text-secondary font-elmessir zoom-text">
+                    <h1 className="text-4xl mb-16 text-secondary font-elmessir zoom-text">
                        The Wedding of
                     </h1>
                     <p className="relative flex flex-col gap-y-4 text-7xl text-[#f7e1de] font-priest zoom-text">
@@ -54,6 +54,9 @@ const Welcome = ({ onInvitationOpen }) => {
                         <span className="block text-center">
                             Asep
                         </span>
+                    </p>
+                    <p className=" flex font-priest text-xl text-white items-center justify-center pt-8">
+                        15 · 08 · 05
                     </p>
                 </div>
                 <button

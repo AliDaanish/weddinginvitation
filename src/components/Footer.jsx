@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <footer className="bg-[#b28682] text-[#F1DDDB] py-8 relative overflow-hidden">
       <div className="container mx-auto text-center space-y-2">
-        <p className="text-lg">&copy; 2024 Wedding Invitation. All rights reserved.</p>
-        <p className="text-sm">Designed with love by [Your Name]</p>
+        <p className="text-lg">&copy; 2025 . All rights reserved.</p>
+        <p className="text-sm">Designed with love by Ali Daanish</p>
       </div>
       
       {/* Dekorasi Bunga di Footer */}

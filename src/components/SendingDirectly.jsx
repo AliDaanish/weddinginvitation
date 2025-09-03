@@ -1,19 +1,27 @@
-import React from "react";
-import { CreditCardIcon } from "@heroicons/react/24/solid";
+import React, {useState} from "react";
+import { CreditCardIcon, GiftIcon } from "@heroicons/react/24/solid";
 import "../../style/SendingDirectly.css"; // Pastikan file CSS terhubung
 
 const SendingDirectly = () => {
-  const brideAccount = {
-    name: "Nama Mempelai Wanita",
-    bank: "Bank ABC",
-    accountNumber: "1234 5678 9012 3456",
-  };
+  const [copiedAccount, setCopiedAccount] = useState(null);
 
-  const groomAccount = {
-    name: "Nama Mempelai Pria",
-    bank: "Bank XYZ",
-    accountNumber: "6543 2109 8765 4321",
+  const handleCopy = (text, id) => {
+    navigator.clipboard.writeText(text);
+    setCopiedAccount(id);
+    setTimeout(() => setCopiedAccount(null), 2000);
   };
+  const brideAccount = {
+  id: "bride",
+  name: "Siti Setianingrum",
+  accountNumber: "1394230271",
+};
+
+const groomAccount = {
+  id: "groom",
+  name: <>Asep Ahmad <br /> Hasanudin</>,
+  accountNumber: "2820661128",
+};
+
 
   const renderCard = (account) => (
     <div
@@ -22,33 +30,45 @@ const SendingDirectly = () => {
       <div className="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow-lg">
         <CreditCardIcon className="h-8 w-8 text-[#C29897]" />
       </div>
-      <div className="flex justify-between mb-4">
-        <h3 className="text-lg font-semibold tracking-wide">{account.bank}</h3>
-        <div className="text-sm italic">ATM Card</div>
+      <img src="/bca.svg" className=" w-16 mb-4"/>
+      <div className="mb-6 flex items-center justify-between">
+        <p className="text-2xl font-bold tracking-wider">{account.accountNumber}</p>
+        <button
+          onClick={() => handleCopy(account.accountNumber, account.id)}
+          className={`ml-4 px-3 py-1 rounded-full text-sm transition ${
+            copiedAccount === account.id
+              ? "bg-green-500 text-white"
+              : "bg-[#C29897] text-white hover:bg-[#D9B2AF]"
+          }`}
+        >
+          {copiedAccount === account.id ? "Tersalin!" : "Salin"}
+        </button>
       </div>
-      <div className="mb-6">
-        <p className="text-2xl font-bold tracking-wider">
-          {account.accountNumber}
-        </p>
-      </div>
+
       <div className="flex justify-between">
-        <p className="text-lg">{account.name}</p>
-        <p className="text-sm">VALID THRU 12/28</p>
+        <p className="text-lg">{account.name}</p> <br />
+        <p className="text-sm">VALID THRU <br />12/28</p>
       </div>
     </div>
   );
 
   return (
-    <div className="py-16 bg-gradient-to-b from-[#EDD0CD] to-[#F1DDDB] relative overflow-hidden">
-      <h2 className="text-4xl font-extrabold text-center mb-12 text-[#C29897] relative z-10 tracking-wider animate-pulse">
-        Sending Directly
+    <div className="py-16 m-4 rounded-2xl bg-gradient-to-b from-[#EDD0CD] to-[#F1DDDB] relative overflow-hidden shadow-2xl drop-shadow-pink-300 border-1 border-rose-300 bg-cover bg-center bg-no-repeat bg-[url('/bgc.png')]">
+      <GiftIcon className="h-24 w-24 p-4 mx-auto mb-4 bg-rose-100 z-40 border-[#C29897] border-2 rounded-full text-[#C29897]" />
+      <h2 className="text-4xl font font-elmessir text-center mb-12 text-secondary relative z-10 tracking-wider animate-pulse">
+        - Wedding Gift -
       </h2>
+      <p className="text-md font font-elmessir text-center mb-12 px-4 text-secondary relative z-10 tracking-wider animate-pulse">
+        Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.
+      </p>
       <div className="max-w-lg mx-auto grid grid-cols-1 gap-10 relative z-10">
         {renderCard(brideAccount)}
+        
         {renderCard(groomAccount)}
+
       </div>
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0">
-        {[...Array(30)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <div
             key={i}
             className="absolute"

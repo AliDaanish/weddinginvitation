@@ -34,6 +34,8 @@ const customIcon = L.divIcon({
   popupAnchor: [0, -32],
 });
 
+const mapsLink = `https://www.google.com/maps?q=${center.lat},${center.lng}`;
+
 const EventDetails = () => {
   const [isShaking, setIsShaking] = useState(false);
   const eventDetailsRef = useRef(null);
@@ -56,37 +58,43 @@ const EventDetails = () => {
   }, []);
 
   return (
-    <div className="relative py-12 bg-gradient-to-r from-[#F1DDDB] via-[#EDD0CD] to-[#D9B2AF] text-center overflow-hidden">
+    <div className="relative py-12 m-4 mt-8 rounded-2xl bg-gradient-to-r from-[#F1DDDB] via-[#EDD0CD] to-[#D9B2AF] text-center overflow-hidden shadow-2xl drop-shadow-pink-300 border-1 border-rose-300 bg-cover bg-center bg-no-repeat bg-[url('/bgc.png')]">
       <h2
-        className={`text-4xl font-extrabold tracking-wider text-[#C29897] mb-8 ${
+        className={`text-5xl font-elmessir tracking-wider text-secondary mb-2 ${
           isShaking ? "animate-shake" : ""
         }`}
         ref={eventDetailsRef}
       >
-        Event Details
+        Acara
       </h2>
+      <p className=" font-elmessir text-secondary p-4 text-md">Kami bermaksud untuk mengundang saudara dalam acara pernikahan kami pada:</p>
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Card Container */}
         {[
-          { icon: <CalendarIcon />, label: "Date:", value: "[Tanggal Pernikahan]" },
-          { icon: <ClockIcon />, label: "Time:", value: "[Waktu Pernikahan]" },
-          { icon: <MapPinIcon />, label: "Location:", value: "[Lokasi Pernikahan]" }
+          { icon: <CalendarIcon />, label: "Tanggal:", value: "[ Senin 15 September 2025]" },
+          { icon: <ClockIcon />, label: "Waktu:", value: 
+            <>
+              <p className="text-lg text-rose-300">Akad Nikah Jam:</p> [09.00 WIB ]<br /> 
+              <p className="text-lg text-rose-300">Resepsi Jam:</p>[11.00 WIB - Selesai] 
+            </>
+          },
+          { icon: <MapPinIcon />, label: "Lokasi:", value: "Jl. Sariwangi Kp. Lembur Tengah No.11 RT02/RW 05 Desa Sariwangi Kec. Prongpong Kab. Bandung Barat, Jawa Barat" }
         ].map((item, index) => (
           <div
             key={index}
-            className="flex items-center justify-start space-x-4 bg-white p-6 shadow-lg rounded-lg relative overflow-hidden transition-transform transform hover:scale-105"
+            className="flex items-center justify-start space-x-4 bg-white p-6 m-6 shadow-lg rounded-lg relative overflow-hidden transition-transform transform hover:scale-105"
           >
-            <div className="flex-shrink-0">
-              {React.cloneElement(item.icon, { className: "h-10 w-10 text-[#F1A6A6] animate-pulse" })}
-            </div>
-            <div className="text-left">
+            <div className=" flex flex-wrap flex-col justify-center items-center mx-auto">
+              <div className="flex-shrink-0">
+                {React.cloneElement(item.icon, { className: "h-10 w-10 text-[#F1A6A6] animate-pulse" })}
+              </div>
               <p className="text-xl font-semibold text-[#C29897]">{item.label}</p>
-              <p className="text-lg text-[#D9B2AF]">{item.value}</p>
+              <p className=" text-[#D9B2AF]">{item.value}</p>
             </div>
           </div>
         ))}
       </div>
-      <div className="relative py-12 mx-4 md:mx-8 lg:mx-16">
+      <div className="relative py-12 mx-4 md:mx-8 lg:mx-16 z-10">
         <h3 className="text-3xl font-bold text-[#C29897] mb-6">Peta Lokasi</h3>
         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
           <MapContainer center={center} zoom={15} style={{ height: "400px", width: "100%" }}>
@@ -102,6 +110,15 @@ const EventDetails = () => {
               </Popup>
             </Marker>
           </MapContainer>
+        </div>
+        <div className="w-fit px-4 py-3 mt-8 mx-auto bg-gradient-to-r from-[#ce938f] to-[#cc8b85] text-white hover:text-primary rounded-full shadow-lg hover:from-[#EDD0CD] hover:to-[#F1DDDB] transition duration-300 animate-pulse font-serif zoom-button">
+          <a
+            href={mapsLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📍 Buka Lokasi
+          </a>
         </div>
       </div>
     </div>
