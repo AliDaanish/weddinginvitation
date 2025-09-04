@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ClockIcon, HeartIcon } from "@heroicons/react/24/outline";
+import { ClockIcon, HeartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import "../../style/Countdown.css";
 
 const Countdown = ({ targetDate }) => {
