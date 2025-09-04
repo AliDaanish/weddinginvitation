@@ -1,6 +1,6 @@
-import { UserIcon, EnvelopeIcon, CheckCircleIcon } from "@heroicons/react/24/solid";
+import { UserIcon, EnvelopeIcon, CheckCircleIcon} from "@heroicons/react/24/solid";
 import "../../style/RSVP.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const RSVP = () => {
   const [name, setName] = useState('');
@@ -11,6 +11,8 @@ const RSVP = () => {
   const [isAttending, setIsAttending] = useState(null);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [isShaking, setIsShaking] = useState(false);
+  const rsvpRef = useRef(null)
 
   const validateForm = () => {
     const newErrors = {};
@@ -74,11 +76,32 @@ const RSVP = () => {
     </div>
   );
 
+  useEffect(() => {
+        const handleScroll = () => {
+          if (rsvpRef.current) {
+            const rect = rsvpRef.current.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              setIsShaking(true);
+            } else {
+              setIsShaking(false);
+            }
+          }
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
+
   return (
     <div className="relative py-16 bg-gradient-to-b from-[#F1DDDB] to-[#EDD0CD]" id="rsvp">
-      <h2 className="text-4xl font-extrabold text-center mb-12 text-[#C29897] tracking-wider animate-pulse">
-        RSVP
-      </h2>
+      <h2 className={`text-5xl font-elmessir text-center text-secondary mb-4 ${
+            isShaking ? "animate-shake" : ""
+          }`}
+          ref={rsvpRef}
+        >
+          RSVP
+        </h2>
       <div className="max-w-lg mx-auto">
         <form
           onSubmit={handleSubmit}

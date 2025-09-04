@@ -55,10 +55,10 @@ const groomAccount = {
   return (
     <div className="py-16 m-4 rounded-2xl bg-gradient-to-b from-[#EDD0CD] to-[#F1DDDB] relative overflow-hidden shadow-2xl drop-shadow-pink-300 border-1 border-rose-300 bg-cover bg-center bg-no-repeat bg-[url('/bgc.png')]">
       <GiftIcon className="h-24 w-24 p-4 mx-auto mb-4 bg-rose-100 z-40 border-[#C29897] border-2 rounded-full text-[#C29897]" />
-      <h2 className="text-4xl font font-elmessir text-center mb-12 text-secondary relative z-10 tracking-wider animate-pulse">
+      <h2 className="text-4xl font font-elmessir text-center mb-12 text-secondary relative z-10 tracking-wider">
         - Wedding Gift -
       </h2>
-      <p className="text-md font font-elmessir text-center mb-12 px-4 text-secondary relative z-10 tracking-wider animate-pulse">
+      <p className="text-md font text-center mb-12 px-4 text-secondary relative z-10 tracking-wider animate-pulse">
         Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.
       </p>
       <div className="max-w-lg mx-auto grid grid-cols-1 gap-10 relative z-10">

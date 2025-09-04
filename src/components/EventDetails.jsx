@@ -67,16 +67,16 @@ const EventDetails = () => {
       >
         Acara
       </h2>
-      <p className=" font-elmessir text-secondary p-4 text-md">Kami bermaksud untuk mengundang saudara dalam acara pernikahan kami pada:</p>
+      <p className="text-secondary p-4 text-md">Kami bermaksud untuk mengundang saudara dalam acara pernikahan kami pada:</p>
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Card Container */}
         {[
           { icon: <CalendarIcon />, label: "Tanggal:", value: "[ Senin 15 September 2025]" },
           { icon: <ClockIcon />, label: "Waktu:", value: 
-            <>
-              <p className="text-lg text-rose-300">Akad Nikah Jam:</p> [09.00 WIB ]<br /> 
-              <p className="text-lg text-rose-300">Resepsi Jam:</p>[11.00 WIB - Selesai] 
-            </>
+            <div>
+              <div className="text-lg text-rose-300">Akad Nikah Jam:</div> [09.00 WIB ]<br /> 
+              <div className="text-lg text-rose-300">Resepsi Jam:</div>[11.00 WIB - Selesai] 
+            </div>
           },
           { icon: <MapPinIcon />, label: "Lokasi:", value: "Jl. Sariwangi Kp. Lembur Tengah No.11 RT02/RW 05 Desa Sariwangi Kec. Prongpong Kab. Bandung Barat, Jawa Barat" }
         ].map((item, index) => (
@@ -88,8 +88,8 @@ const EventDetails = () => {
               <div className="flex-shrink-0">
                 {React.cloneElement(item.icon, { className: "h-10 w-10 text-[#F1A6A6] animate-pulse" })}
               </div>
-              <p className="text-xl font-semibold text-[#C29897]">{item.label}</p>
-              <p className=" text-[#D9B2AF]">{item.value}</p>
+              <div className="text-xl font-semibold text-[#C29897]">{item.label}</div>
+              <div className=" text-[#D9B2AF]">{item.value}</div>
             </div>
           </div>
         ))}
