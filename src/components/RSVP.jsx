@@ -119,7 +119,7 @@ const RSVP = () => {
               onChange={(e) => setName(e.target.value)}
               className="w-full p-3 border border-[#D8B5B4] rounded-lg text-[#C29897] placeholder-[#C29897] bg-white focus:ring-2 focus:ring-[#C29897] focus:outline-none transition duration-300"
               required
-              placeholder="Enter your name"
+              placeholder="Contoh: Ifalna"
             />
             {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name}</p>}
           </div>
@@ -136,7 +136,7 @@ const RSVP = () => {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full p-3 border border-[#D8B5B4] rounded-lg text-[#C29897] placeholder-[#C29897] bg-white focus:ring-2 focus:ring-[#C29897] focus:outline-none transition duration-300"
               required
-              placeholder="Enter your email"
+              placeholder="Contoh: ifalna@gmail.com"
             />
             {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
           </div>
