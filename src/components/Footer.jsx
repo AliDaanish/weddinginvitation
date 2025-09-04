@@ -2,8 +2,9 @@ import React from 'react';
 import "../../style/Footer.css";
 const Footer = () => {
   return (
-    <footer className="bg-[#b28682] text-[#F1DDDB] py-8 relative overflow-hidden">
-      <div className="container mx-auto text-center space-y-2">
+    <footer className="bg-[#b28682] text-[#F1DDDB] py-4 relative flex overflow-hidden">
+      <img src="/ad.png" alt="ali-daanish" className='w-26 h-fit flex mx-auto' />
+      <div className="container mx-auto text-center space-y-2 my-auto w-fit">
         <p className="text-lg">&copy; 2025 . All rights reserved.</p>
         <p className="text-sm">Designed with love by Ali Daanish</p>
       </div>

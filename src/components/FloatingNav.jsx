@@ -38,42 +38,55 @@ const FloatingButton = () => {
 
             {/* Navigation Menu */}
             {isOpen && (
-                <div ref={menuRef} className={`absolute flex flex-col justify-center items-center bottom-0 right-0 bg-white/90 shadow-lg rounded-lg -z-10 w-screen -mb-2 ${isOpen ? "block" : "hidden"}`}>
+                <div ref={menuRef} className={`absolute flex flex-col justify-center items-center bottom-0 right-2 bg-white/90 border-rose-300 border-1 shadow-2xl rounded-lg -z-10 w-96 -mb-2 ${isOpen ? "block" : "hidden"}`}>
                     <a 
                         href="#about-us"
                         className="block px-4 py-2 text-[#fc8987] hover:bg-gray-200 transition-colors duration-300"
+                        onClick={() => setIsOpen(false)}
                     >
                         Home
                     </a>
                     <a 
                         href="#profil"
                         className="block px-4 py-2 text-[#fc8987] hover:bg-gray-200 transition-colors duration-300"
+                        onClick={() => setIsOpen(false)}
                     >
                         Profil
                     </a>
                     <a 
                         href="#countdown"
                         className="block px-4 py-2 text-[#fc8987] hover:bg-gray-200 transition-colors duration-300"
+                        onClick={() => setIsOpen(false)}
                     >
                         Countdown
                     </a>
                     <a 
                         href="#event-details"
                         className="block px-4 py-2 text-[#fc8987] hover:bg-gray-200 transition-colors duration-300"
+                        onClick={() => setIsOpen(false)}
                     >
                         Acara
                     </a>
                     <a 
                         href="#rsvp"
                         className="block px-4 py-2 text-[#fc8987] hover:bg-gray-200 transition-colors duration-300"
+                        onClick={() => setIsOpen(false)}
                     >
                         RSVP
                     </a>
                     <a 
                         href="#sending-directly"
                         className="block px-4 py-2 text-[#fc8987] hover:bg-gray-200 transition-colors duration-300"
+                        onClick={() => setIsOpen(false)}
                     >
-                        Sending Directly
+                        Wedding Gift
+                    </a>
+                    <a 
+                        href="#best-wishes"
+                        className="block px-4 py-2 text-[#fc8987] hover:bg-gray-200 transition-colors duration-300"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Kirim Harapan & Do’a
                     </a>
                 </div>
             )}

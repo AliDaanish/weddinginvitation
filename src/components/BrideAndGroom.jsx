@@ -4,7 +4,7 @@ import '../../style/BrideAndGroom.css';
 const BrideAndGroom = () => {
     return (
         <div className="m-4 rounded-2xl overflow-hidden p-8 my-8 shadow-2xl drop-shadow-pink-300 border-1 border-rose-300 bg-cover bg-center bg-no-repeat bg-[url('/bgc.png')]">
-            <p className="text-center mb-6 tracking-wider text-secondary text-lg font-elmessir">Kami mohon do'a & restunya atas pernikahan kami</p>
+            <p className="text-center mb-6 tracking-wider text-secondary text-xl font-elmessir">Kami mohon do'a & restunya atas pernikahan kami</p>
             <div className="portrait-wrapper">
                 <div className="portrait-frame bride-frame bride bg-[#F1DDDB]">
                     <img src="/bride.png" alt="Bride" className="prtrait-image" />
