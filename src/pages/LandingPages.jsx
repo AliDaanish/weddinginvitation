@@ -25,7 +25,7 @@ const LandingPage = () => {
     }
 
     return(
-      <div className="max-w-[420px] w-full mx-auto flex flex-col bg-[#F1DDDB] drop-shadow-rose-500 shadow-2xl ">
+      <div className="max-w-[873px] w-full mx-auto flex flex-col bg-[#F1DDDB] drop-shadow-rose-500 shadow-2xl ">
        {/* Landing Page */}
         <div className="flex-1">
         <Welcome onInvitationOpen={handleInvitationOpen} />
