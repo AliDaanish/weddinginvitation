@@ -10,7 +10,7 @@ const BrideAndGroom = () => {
                     <img src="/bride.png" alt="Bride" className="prtrait-image" />
                 </div>
                 <div className="portrait-details">
-                    <h2 className="text-4xl mb-4 mt-4 font-priest tracking-wider text-[#8f1b1b] animate-pulse">
+                    <h2 className="text-3xl mb-4 mt-4 font-priest tracking-wider text-[#8f1b1b] animate-pulse">
                     Siti Setianingrum
                     </h2>
                     <p className=" text-secondary font-elmessir">Putri Ketiga Dari Bapak <br /> M. Ade Sopian & Ibu Siti Nur Hasanah</p>
