@@ -58,7 +58,7 @@ const Welcome = ({ onInvitationOpen }) => {
                 <p className="flex flex-col pb-16 justify-center items-center text-[#f7e1de] font-priest zoom-text rounded-full w-96 h-96 bg-secondary leading-tight">
                     <span className=" text-7xl">Titi &</span>
                     <span className="text-7xl mb-4">Asep</span>
-                    <span className="text-xl mt-4 text-white font-priest">15 · 08 · 05</span>
+                    <span className="text-xl mt-4 text-white font-priest">15 · 09 · 05</span>
                 </p>
                 
                 <img src="/ornamen.png" alt="ornamen" className="absolute w-3xl bottom-20 -right-26 -rotate-35" />
