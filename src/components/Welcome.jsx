@@ -61,7 +61,7 @@ const Welcome = ({ onInvitationOpen }) => {
                     <span className="text-xl mt-4 text-white font-priest">15 · 08 · 05</span>
                 </p>
                 
-                <img src="/ornamen.png" alt="ornamen" className="absolute w-4xl bottom-36" />
+                <img src="/ornamen.png" alt="ornamen" className="absolute w-4xl bottom-24" />
 
                 <button
                     onClick={handleClick}
