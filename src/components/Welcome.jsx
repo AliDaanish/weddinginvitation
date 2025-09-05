@@ -3,7 +3,8 @@ import "../../style/Welcome.css"
 import { ArrowRightIcon } from "@heroicons/react/24/outline"
 
 const Welcome = ({ onInvitationOpen }) => {
-    const [showWelcome, setShowWelcome] = useState(true);
+    const [isVisible, setIsVisible] = useState(true);
+    const [isFading, setIsFading] = useState(false);
 
     useEffect(() => {
         document.body.classList.add("no-scroll");
@@ -14,21 +15,24 @@ const Welcome = ({ onInvitationOpen }) => {
 
     const handleClick = () => {
         document.body.classList.remove("no-scroll");
-        onInvitationOpen();
-        setShowWelcome(false);
+        onInvitationOpen(); // triggers music + state
+        setIsFading(true);   // start fade-out
 
         setTimeout(() => {
-            const nextComponent = document.getElementById("next-component");
-            if(nextComponent) {
-                nextComponent.scrollIntoView({ behavior: "smooth" });
-            }
-        }, 100);
-    }
+            setIsVisible(false); // hide component
 
-    if (!showWelcome) return null;
+            // Scroll AFTER fade-out completes
+            setTimeout(() => {
+            const nextComponent = document.getElementById("next-component");
+            nextComponent?.scrollIntoView({ behavior: "smooth" });
+            }, 300); // slight delay after unmount
+        }, 800); // match fade-out duration
+    };
+
+    if (!isVisible) return null
 
     return(
-        <div className="relative w-full h-screen overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('/bg.jpg')]">
+        <div className={`relative w-full h-screen overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('/bg.jpg')] ${isFading ? 'fade-out' : ''}`}>
             <div className="absolute inset-0 bg-black opacity-20" />
             <div className="absolute inset-0">
                 {/* nambah bunga */}
@@ -46,33 +50,30 @@ const Welcome = ({ onInvitationOpen }) => {
                 ))}
             </div>
             
-            <div className="flex flex-wrap gap-48 relative items-center justify-center translate-y-2/9">
-                <div className="flex-col items-center justify-center transform text-center z-30">
-                    <h1 className="text-4xl mb-16 text-secondary font-elmessir zoom-text">
-                       The Wedding of
-                    </h1>
-                    <p className="relative flex flex-col gap-y-4 text-7xl text-[#f7e1de] font-priest zoom-text">
+            <div className="relative flex flex-col items-center justify-center gap-12 px-4 sm:px-8 md:px-16 max-w-screen-md mx-auto min-h-screen text-center">
+                <h1 className="text-xl sm:text-2xl md:text-4xl mb-6 text-secondary font-elmessir zoom-text">
+                    The Wedding of
+                </h1>
 
-                        <span className="block text-center">
-                            Titi &
-                        </span>
-                        <span className="block text-center">
-                            Asep
-                        </span>
-                    </p>
-                    <p className=" flex font-priest text-xl text-white items-center justify-center pt-8">
-                        15 · 08 · 05
-                    </p>
-                </div>
+                <p className="text-4xl sm:text-5xl md:text-6xl text-[#f7e1de] font-priest zoom-text leading-tight">
+                    <span>Titi &</span><br />
+                    <span>Asep</span>
+                </p>
+
+                <p className="text-sm sm:text-base md:text-lg text-white font-priest pt-2">
+                    15 · 08 · 05
+                </p>
+
                 <button
                     onClick={handleClick}
-                    className="w-fit px-8 py-3 mt-8 bg-gradient-to-r from-[#ce938f] to-[#cc8b85] text-white rounded-full shadow-lg hover:from-[#EDD0CD] hover:to-[#F1DDDB] transition duration-300 animate-pulse font-serif zoom-button"
+                    className="w-full sm:w-auto px-6 py-3 mt-6 bg-gradient-to-r from-[#ce938f] to-[#cc8b85] text-white rounded-full shadow-lg hover:from-[#EDD0CD] hover:to-[#F1DDDB] transition duration-300 animate-pulse font-serif zoom-button"
                 >
-                    <span className="flex items-center font-bold">
-                        Buka Undangan
+                    <span className="flex items-center justify-center font-bold">
+                    Buka Undangan
                     </span>
                 </button>
             </div>
+
         </div>
     )
 }

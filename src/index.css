@@ -28,6 +28,22 @@
   font-style: normal;
 }
 
+.fade-out {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+
 
 @theme {
     --font-priest: Priestacy;

@@ -22,10 +22,6 @@ const LandingPage = () => {
     const handleInvitationOpen = () => {
         setInvitationOpened(true);
         setIsPlaying(true);
-        setTimeout(() => {
-          const nextSection = document.getElementById("next-component");
-          nextSection?.scrollIntoView({ behavior: "smooth" });
-        }, 300);
     }
 
     return(
