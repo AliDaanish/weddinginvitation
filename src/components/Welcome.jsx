@@ -50,15 +50,15 @@ const Welcome = ({ onInvitationOpen }) => {
                 ))}
             </div>
             
-            <div className="relative flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 min-h-screen text-center space-y-6">
-                <h1 className="text-xl sm:text-2xl md:text-4xl text-secondary font-elmessir zoom-text">
+            <div className="relative flex flex-col items-center justify-center px-4 min-h-screen text-center space-y-6">
+                <h1 className="text-4xl text-secondary font-elmessir zoom-text">
                     The Wedding of
                 </h1>
 
-                <p className="flex flex-col text-4xl sm:text-5xl md:text-6xl pb-16 justify-center items-center text-[#f7e1de] font-priest zoom-text rounded-full w-96 h-96 bg-secondary leading-tight">
-                    <span>Titi &</span>
-                    <span className="mb-4">Asep</span>
-                    <span className="text-xl sm:text-base md:text-lg mt-4 text-white font-priest">15 · 08 · 05</span>
+                <p className="flex flex-col pb-16 justify-center items-center text-[#f7e1de] font-priest zoom-text rounded-full w-96 h-96 bg-secondary leading-tight">
+                    <span className=" text-7xl">Titi &</span>
+                    <span className="text-7xl mb-4">Asep</span>
+                    <span className="text-xl mt-4 text-white font-priest">15 · 08 · 05</span>
                 </p>
                 
                 <img src="/ornamen.png" alt="ornamen" className="absolute w-4xl bottom-36" />
