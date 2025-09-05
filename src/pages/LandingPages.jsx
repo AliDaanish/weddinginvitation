@@ -30,12 +30,6 @@ const LandingPage = () => {
 
     return(
       <div className="max-w-[420px] w-full mx-auto flex flex-col bg-[#F1DDDB] drop-shadow-rose-500 shadow-2xl ">
-
-        {/* Hero Section
-          <div className="hidden lg:block lg:flex-none lg:w-2/3 heroSticky">
-            <Hero isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
-          </div> */}
-
        {/* Landing Page */}
         <div className="flex-1">
         <Welcome onInvitationOpen={handleInvitationOpen} />

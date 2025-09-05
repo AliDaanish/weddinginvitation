@@ -1,8 +1,10 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import "../../style/Welcome.css"
 import { ArrowRightIcon } from "@heroicons/react/24/outline"
 
 const Welcome = ({ onInvitationOpen }) => {
+    const [showWelcome, setShowWelcome] = useState(true);
+
     useEffect(() => {
         document.body.classList.add("no-scroll");
         return () => {
@@ -13,6 +15,7 @@ const Welcome = ({ onInvitationOpen }) => {
     const handleClick = () => {
         document.body.classList.remove("no-scroll");
         onInvitationOpen();
+        setShowWelcome(false);
 
         setTimeout(() => {
             const nextComponent = document.getElementById("next-component");
@@ -21,6 +24,8 @@ const Welcome = ({ onInvitationOpen }) => {
             }
         }, 100);
     }
+
+    if (!showWelcome) return null;
 
     return(
         <div className="relative w-full h-screen overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('/bg.jpg')]">
