@@ -51,11 +51,11 @@ const Welcome = ({ onInvitationOpen }) => {
             </div>
             
             <div className="relative flex flex-col items-center justify-center px-4 min-h-screen text-center space-y-6">
-                <h1 className="text-4xl text-secondary font-elmessir zoom-text">
+                <h1 className="text-4xl text-secondary font-elmessir">
                     The Wedding of
                 </h1>
 
-                <p className="flex flex-col pb-16 justify-center items-center text-[#f7e1de] font-priest zoom-text rounded-full w-96 h-96 bg-secondary leading-tight">
+                <p className="flex flex-col pb-16 justify-center items-center text-[#f7e1de] font-priest rounded-full w-96 h-96 bg-secondary">
                     <span className=" text-7xl">Titi &</span>
                     <span className="text-7xl mb-4">Asep</span>
                     <span className="text-xl mt-4 text-white font-priest">15 · 09 · 25</span>
