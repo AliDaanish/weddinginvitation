@@ -33,9 +33,9 @@ const Welcome = ({ onInvitationOpen }) => {
 
     return(
         <div className={`relative w-full h-screen overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('/bgc.png')] ${isFading ? 'fade-out' : ''}`}>
-            <div className="absolute inset-0 bg-black opacity-20" />
+            {/* <div className="absolute inset-0 bg-black opacity-20" />
             <div className="absolute inset-0">
-                {/* nambah bunga */}
+                nambah bunga
                 {[...Array(5)].map((_, index) => (
                 <div
                     key={index}
@@ -48,7 +48,7 @@ const Welcome = ({ onInvitationOpen }) => {
                     }}
                 ></div>
                 ))}
-            </div>
+            </div> */}
             
             <div className="relative flex flex-col items-center justify-center px-4 min-h-screen text-center space-y-6">
                 <h1 className="text-4xl text-secondary font-elmessir">
